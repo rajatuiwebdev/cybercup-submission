@@ -6,17 +6,11 @@ export default function Decompress() {
 
   const handleVerification = async () => {
     try {
-      // Set the Pinata Cloud URL with the IPFS hash
       const pinataCloudUrl = `https://gateway.pinata.cloud/ipfs/${ipfsLink}`;
-      
-      // Redirect the user to the Pinata Cloud URL
       window.location.href = pinataCloudUrl;
-      
-      // Assuming the verification is successful
       setVerificationResult(true);
     } catch (error) {
       console.error("Error during verification:", error);
-      // Handle error as needed
       setVerificationResult(false);
     }
   };
@@ -78,7 +72,6 @@ export default function Decompress() {
             </div>
           </div>
         </nav>
-        {/* ... (your navigation bar code) ... */}
         <div className="center-content">
           <div className="container">
             <div className="row-auto">
