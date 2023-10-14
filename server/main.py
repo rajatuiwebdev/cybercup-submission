@@ -24,6 +24,7 @@ def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 def decompress_text_binary(compressed_file_path):
     extract_dir = os.path.join(app.config['DECOMPRESSED_FOLDER'], f'decompressed_{os.path.basename(compressed_file_path)}')
+    
     with zipfile.ZipFile(compressed_file_path, 'r') as zip_ref:
         zip_ref.extractall(extract_dir)
     
